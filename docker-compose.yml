@@ -1,0 +1,47 @@
+version: '3'
+services:
+  # Node-RED service
+  node-red:
+    image: nodered/node-red:latest  # Using the official Node-RED image
+    container_name: node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./nodered-data:/data  # Bind mount for persisting Node-RED flows
+    networks:
+      - mynetwork  # Custom network
+
+  # MinIO service
+  minio:
+    image: minio/minio:latest  # Using the official MinIO image
+    container_name: minio
+    environment:
+      MINIO_ROOT_USER: "minioadmin"
+      MINIO_ROOT_PASSWORD: "minioadmin"
+    command: server --console-address ":9001" /data
+    ports:
+      - "9000:9000"  # MinIO S3 API
+      - "9001:9001"  # MinIO Web Console
+    volumes:
+      - ./minio-data:/data  # Bind mount for persisting MinIO data
+    networks:
+      - mynetwork  # Custom network
+
+  # RabbitMQ service
+  rabbitmq:
+    image: rabbitmq:management  # Using the official RabbitMQ image with management plugin
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # RabbitMQ AMQP port
+      - "15672:15672"  # RabbitMQ Management Console
+    networks:
+      - mynetwork  # Custom network
+
+# Define a custom bridge network called 'mynetwork' that all services will share
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  node-red-data:  # Bind mount for Node-RED data (created locally)
+  minio-data:     # Bind mount for MinIO data (created locally)

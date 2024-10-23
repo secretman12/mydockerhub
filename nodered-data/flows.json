@@ -1,0 +1,22 @@
+[
+    {
+        "id": "84563344481478a4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3440f7e96f17a96c",
+        "type": "status",
+        "z": "84563344481478a4",
+        "name": "",
+        "scope": null,
+        "x": 760,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    }
+]
