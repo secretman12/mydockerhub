@@ -1,4 +1,4 @@
-version: '3'
+
 services:
   # Node-RED service
   node-red:
@@ -37,6 +37,28 @@ services:
     networks:
       - mynetwork  # Custom network
 
+  # ThingsBoard service
+  mytb:
+    restart: always
+    image: "thingsboard/tb-postgres"
+    container_name: mytb
+    ports:
+      - "8080:9090"
+      - "1883:1883"
+      - "7070:7070"
+      - "5683-5688:5683-5688/udp"
+    environment:
+      TB_QUEUE_TYPE: rabbitmq
+      TB_QUEUE_RABBIT_MQ_USERNAME: guest
+      TB_QUEUE_RABBIT_MQ_PASSWORD: guest
+      TB_QUEUE_RABBIT_MQ_HOST: rabbitmq  # Updated to match service name
+      TB_QUEUE_RABBIT_MQ_PORT: 5672
+    volumes:
+      - ./.Thingsboard/mytb-data:/data
+      - ./.Thingsboard/mytb-logs:/var/log/thingsboard
+    networks:
+      - mynetwork  # Custom network
+
 # Define a custom bridge network called 'mynetwork' that all services will share
 networks:
   mynetwork:
@@ -45,3 +67,4 @@ networks:
 volumes:
   node-red-data:  # Bind mount for Node-RED data (created locally)
   minio-data:     # Bind mount for MinIO data (created locally)
+
