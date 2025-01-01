@@ -1,6 +1,6 @@
 [
     {
-        "id": "84563344481478a4",
+        "id": "cc87bf96cbd4b4c1",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,15 +8,388 @@
         "env": []
     },
     {
-        "id": "3440f7e96f17a96c",
-        "type": "status",
-        "z": "84563344481478a4",
-        "name": "",
-        "scope": null,
-        "x": 760,
-        "y": 440,
+        "id": "52e8d778c30d7cee",
+        "type": "minio-config",
+        "name": "MinIOnstance",
+        "host": "minio",
+        "port": "9000",
+        "useSsl": false
+    },
+    {
+        "id": "6df72e0fa902d8b2",
+        "type": "amqp-broker",
+        "name": "rabbitmq",
+        "host": "rabbitmq",
+        "port": 5672,
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
+    },
+    {
+        "id": "inject1",
+        "type": "inject",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "Trigger API Call",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 660,
+        "y": 600,
         "wires": [
+            [
+                "http1"
+            ]
+        ]
+    },
+    {
+        "id": "http1",
+        "type": "http request",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "OpenAQ Germany SO2 Data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.openaq.org/v3/locations?countries_id=50&parameters=pm10,so2&limit=10",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-API-Key",
+                "valueType": "other",
+                "valueValue": "4c7a924a9b69a58593271c446a9362a51e3b3d049eee4fa5b0d247f8d76705be"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "",
+                "valueType": "other",
+                "valueValue": ""
+            }
+        ],
+        "x": 940,
+        "y": 620,
+        "wires": [
+            [
+                "5343f68a153787b8"
+            ]
+        ]
+    },
+    {
+        "id": "5343f68a153787b8",
+        "type": "json",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            [
+                "70e20abb953af9d4"
+            ]
+        ]
+    },
+    {
+        "id": "70e20abb953af9d4",
+        "type": "file",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "filename": "local_Data",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1390,
+        "y": 640,
+        "wires": [
+            [
+                "8f6f815a0711bf97"
+            ]
+        ]
+    },
+    {
+        "id": "8f6f815a0711bf97",
+        "type": "files",
+        "z": "cc87bf96cbd4b4c1",
+        "files_name": "",
+        "host": "52e8d778c30d7cee",
+        "files_operation": "fPutObject",
+        "files_bucket": "ergasia",
+        "files_object": "local_Data",
+        "files_filepath": "local_Data",
+        "files_metadata": "",
+        "x": 1660,
+        "y": 660,
+        "wires": [
+            [
+                "0bb9110a2c67bf69"
+            ],
+            [
+                "40f3907ee1468cd1"
+            ]
+        ]
+    },
+    {
+        "id": "0bb9110a2c67bf69",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "API Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1960,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "40f3907ee1468cd1",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "API Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2040,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ad865ac712095c50",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "7daf49deab909409",
+        "type": "file in",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "filename": "local_Data_read",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1400,
+        "y": 1020,
+        "wires": [
+            [
+                "0b82b68f7e3d36ca"
+            ]
+        ]
+    },
+    {
+        "id": "99c9728a2217e43e",
+        "type": "files",
+        "z": "cc87bf96cbd4b4c1",
+        "files_name": "",
+        "host": "52e8d778c30d7cee",
+        "files_operation": "fGetObject",
+        "files_bucket": "ergasia",
+        "files_object": "local_Data",
+        "files_filepath": "local_Data_read",
+        "files_metadata": "",
+        "x": 940,
+        "y": 960,
+        "wires": [
+            [
+                "7daf49deab909409"
+            ],
+            [
+                "ad865ac712095c50"
+            ]
+        ]
+    },
+    {
+        "id": "0b82b68f7e3d36ca",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "02effc26eeb5b69b",
+        "type": "amqp-in",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "broker": "6df72e0fa902d8b2",
+        "prefetch": 0,
+        "noAck": true,
+        "exchangeName": "amq.topic",
+        "exchangeType": "topic",
+        "exchangeRoutingKey": "system.dokmin",
+        "exchangeDurable": true,
+        "queueName": "lefteris",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 590,
+        "y": 800,
+        "wires": [
+            [
+                "6c453bc34ca277fc"
+            ]
+        ]
+    },
+    {
+        "id": "6c453bc34ca277fc",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "msg status",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "cc022be4a09a39e9",
+        "type": "inject",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 960,
+        "wires": [
+            [
+                "99c9728a2217e43e"
+            ]
+        ]
+    },
+    {
+        "id": "65a958fe91604102",
+        "type": "objects",
+        "z": "cc87bf96cbd4b4c1",
+        "objects_name": "",
+        "host": "52e8d778c30d7cee",
+        "objects_operation": "removeObject",
+        "objects_bucket": "ergasia",
+        "objects_object": "local_Data",
+        "objects_offset": "",
+        "objects_length": "",
+        "objects_stream": "",
+        "objects_size": "",
+        "objects_metadata": "",
+        "objects_sourceobject": "",
+        "objects_conditions": "",
+        "objects_objectslist": [],
+        "objects_prefix": "",
+        "objects_etag": "",
+        "objects_datetime": "",
+        "x": 1010,
+        "y": 320,
+        "wires": [
+            [
+                "e8db8b9883ec82ac"
+            ],
             []
         ]
+    },
+    {
+        "id": "8d3ae92c774aaeb9",
+        "type": "inject",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 660,
+        "y": 300,
+        "wires": [
+            [
+                "65a958fe91604102"
+            ]
+        ]
+    },
+    {
+        "id": "e8db8b9883ec82ac",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "done",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 300,
+        "wires": []
     }
 ]

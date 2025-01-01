@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "4.0.5",
+        "version": "4.0.8",
         "local": false,
         "user": false,
         "nodes": {
@@ -424,6 +424,162 @@
                 "user": false,
                 "module": "node-red",
                 "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/storage/23-watch.js"
+            }
+        }
+    },
+    "node-red-contrib-minio-all": {
+        "name": "node-red-contrib-minio-all",
+        "version": "0.0.6",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "minio-config": {
+                "name": "minio-config",
+                "types": [
+                    "minio-config"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/minio-config.js"
+            },
+            "bucket operations": {
+                "name": "bucket operations",
+                "types": [
+                    "buckets"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/buckets.js"
+            },
+            "file object operations": {
+                "name": "file object operations",
+                "types": [
+                    "files"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/files.js"
+            },
+            "object operations": {
+                "name": "object operations",
+                "types": [
+                    "objects"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/objects.js"
+            },
+            "presigned operations": {
+                "name": "presigned operations",
+                "types": [
+                    "presigned"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/presigned.js"
+            },
+            "bucket notification operations": {
+                "name": "bucket notification operations",
+                "types": [
+                    "notifications"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/notifications.js"
+            },
+            "bucket policy operations": {
+                "name": "bucket policy operations",
+                "types": [
+                    "policies"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-minio-all",
+                "file": "/data/node_modules/node-red-contrib-minio-all/policies.js"
+            }
+        }
+    },
+    "node-red-contrib-mp-function": {
+        "name": "node-red-contrib-mp-function",
+        "version": "1.1.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "mpf": {
+                "name": "mpf",
+                "types": [
+                    "mp-function"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-mp-function",
+                "file": "/data/node_modules/node-red-contrib-mp-function/lib/mpf.js"
+            }
+        }
+    },
+    "@meowwolf/node-red-contrib-amqp": {
+        "name": "@meowwolf/node-red-contrib-amqp",
+        "version": "2.4.2",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "amqp-in": {
+                "name": "amqp-in",
+                "types": [
+                    "amqp-in"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@meowwolf/node-red-contrib-amqp",
+                "file": "/usr/src/node-red/node_modules/@meowwolf/node-red-contrib-amqp/build/src/nodes/amqp-in.js"
+            },
+            "amqp-out": {
+                "name": "amqp-out",
+                "types": [
+                    "amqp-out"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@meowwolf/node-red-contrib-amqp",
+                "file": "/usr/src/node-red/node_modules/@meowwolf/node-red-contrib-amqp/build/src/nodes/amqp-out.js"
+            },
+            "amqp-broker": {
+                "name": "amqp-broker",
+                "types": [
+                    "amqp-broker"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@meowwolf/node-red-contrib-amqp",
+                "file": "/usr/src/node-red/node_modules/@meowwolf/node-red-contrib-amqp/build/src/nodes/amqp-broker.js"
+            },
+            "amqp-in-manual-ack": {
+                "name": "amqp-in-manual-ack",
+                "types": [
+                    "amqp-in-manual-ack"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "@meowwolf/node-red-contrib-amqp",
+                "file": "/usr/src/node-red/node_modules/@meowwolf/node-red-contrib-amqp/build/src/nodes/amqp-in-manual-ack.js"
             }
         }
     }
