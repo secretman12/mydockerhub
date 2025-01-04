@@ -1,27 +1,27 @@
 
 services:
-  # Node-RED service
+  
   node-red:
-    image: nodered/node-red:latest  # Using the official Node-RED image
+    image: nodered/node-red:latest  
     container_name: node-red
     ports:
       - "1880:1880"
     volumes:
-      - ./nodered-data:/data  # Bind mount for persisting Node-RED flows
+      - ./nodered-data:/data  
     networks:
-      - mynetwork  # Custom network
+      - mynetwork  
 
-  # MinIO service
 
-  # RabbitMQ service
+
+
   rabbitmq:
-    image: rabbitmq:management  # Using the official RabbitMQ image with management plugin
+    image: rabbitmq:management  
     container_name: rabbitmq
     ports:
-      - "5672:5672"    # RabbitMQ AMQP port
-      - "15672:15672"  # RabbitMQ Management Console
+      - "5672:5672"    
+      - "15672:15672"  
     networks:
-      - mynetwork  # Custom network
+      - mynetwork  
 
   
 networks:
@@ -29,5 +29,5 @@ networks:
     driver: bridge
 
 volumes:
-  node-red-data:  # Bind mount for Node-RED data (created locally)
-  minio-data:     # Bind mount for MinIO data (created locally)
+  node-red-data:  
+  minio-data:     
