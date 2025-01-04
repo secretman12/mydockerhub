@@ -5,8 +5,10 @@ This project demonstrates how to set up **Node-RED** and **RabbitMQ** using Dock
 
 to run kubernates need port-forward 
 
+kubectl scale deployment minio --replicas=1
 kubectl port-forward svc/minio 9000:9000
 kubectl port-forward svc/minio 9001:9001
+
 
 the convert from dockerfile to kubernates was  done with kompose file 
 
