@@ -1,70 +1,63 @@
 
+
 services:
-  # Node-RED service
   node-red:
-    image: nodered/node-red:latest  # Using the official Node-RED image
+    image: nodered/node-red:latest
     container_name: node-red
     ports:
       - "1880:1880"
     volumes:
-      - ./nodered-data:/data  # Bind mount for persisting Node-RED flows
+      - ./nodered-data:/data
     networks:
-      - mynetwork  # Custom network
+      - mynetwork
 
-  # MinIO service
-  minio:
-    image: minio/minio:latest  # Using the official MinIO image
-    container_name: minio
-    environment:
-      MINIO_ROOT_USER: "minioadmin"
-      MINIO_ROOT_PASSWORD: "minioadmin"
-    command: server --console-address ":9001" /data
-    ports:
-      - "9000:9000"  # MinIO S3 API
-      - "9001:9001"  # MinIO Web Console
-    volumes:
-      - ./minio-data:/data  # Bind mount for persisting MinIO data
-    networks:
-      - mynetwork  # Custom network
-
-  # RabbitMQ service
   rabbitmq:
-    image: rabbitmq:management  # Using the official RabbitMQ image with management plugin
+    image: rabbitmq:management
     container_name: rabbitmq
     ports:
-      - "5672:5672"    # RabbitMQ AMQP port
-      - "15672:15672"  # RabbitMQ Management Console
-    networks:
-      - mynetwork  # Custom network
-
-  # ThingsBoard service
-  mytb:
-    restart: always
-    image: "thingsboard/tb-postgres"
-    container_name: mytb
-    ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "7070:7070"
-      - "5683-5688:5683-5688/udp"
+      - "5672:5672"
+      - "15672:15672"
     environment:
-      TB_QUEUE_TYPE: rabbitmq
-      TB_QUEUE_RABBIT_MQ_USERNAME: guest
-      TB_QUEUE_RABBIT_MQ_PASSWORD: guest
-      TB_QUEUE_RABBIT_MQ_HOST: rabbitmq  # Updated to match service name
-      TB_QUEUE_RABBIT_MQ_PORT: 5672
-    volumes:
-      - ./.Thingsboard/mytb-data:/data
-      - ./.Thingsboard/mytb-logs:/var/log/thingsboard
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
     networks:
-      - mynetwork  # Custom network
+      - mynetwork
 
-# Define a custom bridge network called 'mynetwork' that all services will share
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      - KC_BOOTSTRAP_ADMIN_USERNAME=admin
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=admin         
+      # RabbitMQ connection settings
+      - KK_TO_RMQ_URL=rabbitmq
+      - KK_TO_RMQ_PORT=5672
+      - KK_TO_RMQ_VHOST=/
+      - KK_TO_RMQ_USERNAME=guest
+      - KK_TO_RMQ_PASSWORD=guest
+      - KK_TO_RMQ_USE_TLS=false
+      - KK_TO_RMQ_EXCHANGE =amq.topic
+      - KK_TO_RMQ_KEY_STORE =
+      - KK_TO_RMQ_KEY_STORE_PAS=
+      - KK_TO_RMQ_TRUST_STORE=
+      - KK_TO_RMQ_TRUST_STORE_PASS=
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak/providers:/opt/keycloak/providers
+    command: 
+      - start-dev
+    depends_on:
+      - rabbitmq
+    networks:
+      - mynetwork
+
 networks:
   mynetwork:
     driver: bridge
 
 volumes:
-  node-red-data:  # Bind mount for Node-RED data (created locally)
-  minio-data:     # Bind mount for MinIO data (created locally)
-
+  node-red-data:
+  minio-data:
+  
+  

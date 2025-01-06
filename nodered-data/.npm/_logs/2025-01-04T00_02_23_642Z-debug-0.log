@@ -1,0 +1,206 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.18.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm remove node-red-contrib-minio-all
+8 verbose argv "remove" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "node-red-contrib-minio-all"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2025-01-04T00_02_23_642Z-
+10 verbose logfile /data/.npm/_logs/2025-01-04T00_02_23_642Z-debug-0.log
+11 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly reify mark retired [ '/data/node_modules/@zxing/text-encoding' ]
+15 silly reify mark retired [ '/data/node_modules/async' ]
+16 silly reify mark retired [ '/data/node_modules/available-typed-arrays' ]
+17 silly reify mark retired [ '/data/node_modules/block-stream2' ]
+18 silly reify mark retired [ '/data/node_modules/browser-or-node' ]
+19 silly reify mark retired [ '/data/node_modules/buffer-crc32' ]
+20 silly reify mark retired [ '/data/node_modules/call-bind' ]
+21 silly reify mark retired [ '/data/node_modules/call-bind-apply-helpers' ]
+22 silly reify mark retired [ '/data/node_modules/call-bound' ]
+23 silly reify mark retired [ '/data/node_modules/decode-uri-component' ]
+24 silly reify mark retired [ '/data/node_modules/define-data-property' ]
+25 silly reify mark retired [ '/data/node_modules/dunder-proto' ]
+26 silly reify mark retired [ '/data/node_modules/es-define-property' ]
+27 silly reify mark retired [ '/data/node_modules/es-errors' ]
+28 silly reify mark retired [ '/data/node_modules/es-object-atoms' ]
+29 silly reify mark retired [ '/data/node_modules/eventemitter3' ]
+30 silly reify mark retired [
+30 silly reify   '/data/node_modules/fast-xml-parser',
+30 silly reify   '/data/node_modules/.bin/fxparser'
+30 silly reify ]
+31 silly reify mark retired [ '/data/node_modules/filter-obj' ]
+32 silly reify mark retired [ '/data/node_modules/for-each' ]
+33 silly reify mark retired [ '/data/node_modules/function-bind' ]
+34 silly reify mark retired [ '/data/node_modules/get-intrinsic' ]
+35 silly reify mark retired [ '/data/node_modules/get-proto' ]
+36 silly reify mark retired [ '/data/node_modules/gopd' ]
+37 silly reify mark retired [ '/data/node_modules/has-property-descriptors' ]
+38 silly reify mark retired [ '/data/node_modules/has-symbols' ]
+39 silly reify mark retired [ '/data/node_modules/has-tostringtag' ]
+40 silly reify mark retired [ '/data/node_modules/hasown' ]
+41 silly reify mark retired [ '/data/node_modules/inherits' ]
+42 silly reify mark retired [ '/data/node_modules/ipaddr.js' ]
+43 silly reify mark retired [ '/data/node_modules/is-arguments' ]
+44 silly reify mark retired [ '/data/node_modules/is-callable' ]
+45 silly reify mark retired [ '/data/node_modules/is-generator-function' ]
+46 silly reify mark retired [ '/data/node_modules/is-regex' ]
+47 silly reify mark retired [ '/data/node_modules/is-typed-array' ]
+48 silly reify mark retired [ '/data/node_modules/lodash' ]
+49 silly reify mark retired [ '/data/node_modules/math-intrinsics' ]
+50 silly reify mark retired [ '/data/node_modules/mime-db' ]
+51 silly reify mark retired [ '/data/node_modules/mime-types' ]
+52 silly reify mark retired [ '/data/node_modules/minio' ]
+53 silly reify mark retired [ '/data/node_modules/node-red-contrib-minio-all' ]
+54 silly reify mark retired [ '/data/node_modules/possible-typed-array-names' ]
+55 silly reify mark retired [ '/data/node_modules/query-string' ]
+56 silly reify mark retired [ '/data/node_modules/readable-stream' ]
+57 silly reify mark retired [ '/data/node_modules/safe-buffer' ]
+58 silly reify mark retired [ '/data/node_modules/safe-regex-test' ]
+59 silly reify mark retired [ '/data/node_modules/sax' ]
+60 silly reify mark retired [ '/data/node_modules/set-function-length' ]
+61 silly reify mark retired [ '/data/node_modules/split-on-first' ]
+62 silly reify mark retired [ '/data/node_modules/stream-chain' ]
+63 silly reify mark retired [ '/data/node_modules/stream-json' ]
+64 silly reify mark retired [ '/data/node_modules/strict-uri-encode' ]
+65 silly reify mark retired [ '/data/node_modules/string_decoder' ]
+66 silly reify mark retired [ '/data/node_modules/strnum' ]
+67 silly reify mark retired [ '/data/node_modules/through2' ]
+68 silly reify mark retired [ '/data/node_modules/util' ]
+69 silly reify mark retired [ '/data/node_modules/util-deprecate' ]
+70 silly reify mark retired [ '/data/node_modules/web-encoding' ]
+71 silly reify mark retired [ '/data/node_modules/which-typed-array' ]
+72 silly reify mark retired [ '/data/node_modules/xml2js' ]
+73 silly reify mark retired [ '/data/node_modules/xmlbuilder' ]
+74 silly reify moves {
+74 silly reify   '/data/node_modules/@zxing/text-encoding': '/data/node_modules/@zxing/.text-encoding-zLGGBEwi',
+74 silly reify   '/data/node_modules/async': '/data/node_modules/.async-qAJ6YcT9',
+74 silly reify   '/data/node_modules/available-typed-arrays': '/data/node_modules/.available-typed-arrays-F0pPOmmD',
+74 silly reify   '/data/node_modules/block-stream2': '/data/node_modules/.block-stream2-8C9qqUzI',
+74 silly reify   '/data/node_modules/browser-or-node': '/data/node_modules/.browser-or-node-jzEDdrWg',
+74 silly reify   '/data/node_modules/buffer-crc32': '/data/node_modules/.buffer-crc32-kkdwlqSv',
+74 silly reify   '/data/node_modules/call-bind': '/data/node_modules/.call-bind-Yv9jQlrb',
+74 silly reify   '/data/node_modules/call-bind-apply-helpers': '/data/node_modules/.call-bind-apply-helpers-tgniXrFt',
+74 silly reify   '/data/node_modules/call-bound': '/data/node_modules/.call-bound-9wgF2ur3',
+74 silly reify   '/data/node_modules/decode-uri-component': '/data/node_modules/.decode-uri-component-IELnLq6w',
+74 silly reify   '/data/node_modules/define-data-property': '/data/node_modules/.define-data-property-VKT18bAJ',
+74 silly reify   '/data/node_modules/dunder-proto': '/data/node_modules/.dunder-proto-Q8sTm0ki',
+74 silly reify   '/data/node_modules/es-define-property': '/data/node_modules/.es-define-property-IEVHdp4Z',
+74 silly reify   '/data/node_modules/es-errors': '/data/node_modules/.es-errors-2sMHs2CU',
+74 silly reify   '/data/node_modules/es-object-atoms': '/data/node_modules/.es-object-atoms-CvCWAMFj',
+74 silly reify   '/data/node_modules/eventemitter3': '/data/node_modules/.eventemitter3-x5xH1mQP',
+74 silly reify   '/data/node_modules/fast-xml-parser': '/data/node_modules/.fast-xml-parser-B8gnWUvv',
+74 silly reify   '/data/node_modules/.bin/fxparser': '/data/node_modules/.bin/.fxparser-hpghM7NU',
+74 silly reify   '/data/node_modules/filter-obj': '/data/node_modules/.filter-obj-Jgi4UyAo',
+74 silly reify   '/data/node_modules/for-each': '/data/node_modules/.for-each-y9KLnFPy',
+74 silly reify   '/data/node_modules/function-bind': '/data/node_modules/.function-bind-8LMoDvai',
+74 silly reify   '/data/node_modules/get-intrinsic': '/data/node_modules/.get-intrinsic-y5kFVvYI',
+74 silly reify   '/data/node_modules/get-proto': '/data/node_modules/.get-proto-l2byuRli',
+74 silly reify   '/data/node_modules/gopd': '/data/node_modules/.gopd-mT5X6yfP',
+74 silly reify   '/data/node_modules/has-property-descriptors': '/data/node_modules/.has-property-descriptors-Zkw8eNQa',
+74 silly reify   '/data/node_modules/has-symbols': '/data/node_modules/.has-symbols-6o5YgQnL',
+74 silly reify   '/data/node_modules/has-tostringtag': '/data/node_modules/.has-tostringtag-udI1voPK',
+74 silly reify   '/data/node_modules/hasown': '/data/node_modules/.hasown-7vUUDMas',
+74 silly reify   '/data/node_modules/inherits': '/data/node_modules/.inherits-IFktovJP',
+74 silly reify   '/data/node_modules/ipaddr.js': '/data/node_modules/.ipaddr.js-J2gGYEs7',
+74 silly reify   '/data/node_modules/is-arguments': '/data/node_modules/.is-arguments-iYSoWRpV',
+74 silly reify   '/data/node_modules/is-callable': '/data/node_modules/.is-callable-yfiNyIDr',
+74 silly reify   '/data/node_modules/is-generator-function': '/data/node_modules/.is-generator-function-dW0JnBcx',
+74 silly reify   '/data/node_modules/is-regex': '/data/node_modules/.is-regex-fftmJuyv',
+74 silly reify   '/data/node_modules/is-typed-array': '/data/node_modules/.is-typed-array-zKAY927Q',
+74 silly reify   '/data/node_modules/lodash': '/data/node_modules/.lodash-RwIfwiNE',
+74 silly reify   '/data/node_modules/math-intrinsics': '/data/node_modules/.math-intrinsics-fi0YAEMp',
+74 silly reify   '/data/node_modules/mime-db': '/data/node_modules/.mime-db-Bc7q22S9',
+74 silly reify   '/data/node_modules/mime-types': '/data/node_modules/.mime-types-Cid6PBHG',
+74 silly reify   '/data/node_modules/minio': '/data/node_modules/.minio-q0FvK3xZ',
+74 silly reify   '/data/node_modules/node-red-contrib-minio-all': '/data/node_modules/.node-red-contrib-minio-all-6SjpPsHD',
+74 silly reify   '/data/node_modules/possible-typed-array-names': '/data/node_modules/.possible-typed-array-names-1tyaQ2BI',
+74 silly reify   '/data/node_modules/query-string': '/data/node_modules/.query-string-ZUkClinY',
+74 silly reify   '/data/node_modules/readable-stream': '/data/node_modules/.readable-stream-VXKeHCl7',
+74 silly reify   '/data/node_modules/safe-buffer': '/data/node_modules/.safe-buffer-RhdIW9jy',
+74 silly reify   '/data/node_modules/safe-regex-test': '/data/node_modules/.safe-regex-test-DUJyYzzl',
+74 silly reify   '/data/node_modules/sax': '/data/node_modules/.sax-qwBQxMBs',
+74 silly reify   '/data/node_modules/set-function-length': '/data/node_modules/.set-function-length-hVqCwJXi',
+74 silly reify   '/data/node_modules/split-on-first': '/data/node_modules/.split-on-first-l1bygOyA',
+74 silly reify   '/data/node_modules/stream-chain': '/data/node_modules/.stream-chain-T3LqioyL',
+74 silly reify   '/data/node_modules/stream-json': '/data/node_modules/.stream-json-Vl354ofu',
+74 silly reify   '/data/node_modules/strict-uri-encode': '/data/node_modules/.strict-uri-encode-vNEZk0YC',
+74 silly reify   '/data/node_modules/string_decoder': '/data/node_modules/.string_decoder-3xV3GvlK',
+74 silly reify   '/data/node_modules/strnum': '/data/node_modules/.strnum-MOrDOwBF',
+74 silly reify   '/data/node_modules/through2': '/data/node_modules/.through2-9N2QCvGp',
+74 silly reify   '/data/node_modules/util': '/data/node_modules/.util-J4uQHpu4',
+74 silly reify   '/data/node_modules/util-deprecate': '/data/node_modules/.util-deprecate-vvLRni8j',
+74 silly reify   '/data/node_modules/web-encoding': '/data/node_modules/.web-encoding-e6a29u4v',
+74 silly reify   '/data/node_modules/which-typed-array': '/data/node_modules/.which-typed-array-Zcm1Uc2I',
+74 silly reify   '/data/node_modules/xml2js': '/data/node_modules/.xml2js-MYxGHhwO',
+74 silly reify   '/data/node_modules/xmlbuilder': '/data/node_modules/.xmlbuilder-GSKaQskN'
+74 silly reify }
+75 silly REMOVE node_modules/xmlbuilder
+76 silly REMOVE node_modules/xml2js
+77 silly REMOVE node_modules/which-typed-array
+78 silly REMOVE node_modules/web-encoding
+79 silly REMOVE node_modules/util-deprecate
+80 silly REMOVE node_modules/util
+81 silly REMOVE node_modules/through2
+82 silly REMOVE node_modules/strnum
+83 silly REMOVE node_modules/string_decoder
+84 silly REMOVE node_modules/strict-uri-encode
+85 silly REMOVE node_modules/stream-json
+86 silly REMOVE node_modules/stream-chain
+87 silly REMOVE node_modules/split-on-first
+88 silly REMOVE node_modules/set-function-length
+89 silly REMOVE node_modules/sax
+90 silly REMOVE node_modules/safe-regex-test
+91 silly REMOVE node_modules/safe-buffer
+92 silly REMOVE node_modules/readable-stream
+93 silly REMOVE node_modules/query-string
+94 silly REMOVE node_modules/possible-typed-array-names
+95 silly REMOVE node_modules/node-red-contrib-minio-all
+96 silly REMOVE node_modules/minio
+97 silly REMOVE node_modules/mime-types
+98 silly REMOVE node_modules/mime-db
+99 silly REMOVE node_modules/math-intrinsics
+100 silly REMOVE node_modules/lodash
+101 silly REMOVE node_modules/is-typed-array
+102 silly REMOVE node_modules/is-regex
+103 silly REMOVE node_modules/is-generator-function
+104 silly REMOVE node_modules/is-callable
+105 silly REMOVE node_modules/is-arguments
+106 silly REMOVE node_modules/ipaddr.js
+107 silly REMOVE node_modules/inherits
+108 silly REMOVE node_modules/hasown
+109 silly REMOVE node_modules/has-tostringtag
+110 silly REMOVE node_modules/has-symbols
+111 silly REMOVE node_modules/has-property-descriptors
+112 silly REMOVE node_modules/gopd
+113 silly REMOVE node_modules/get-proto
+114 silly REMOVE node_modules/get-intrinsic
+115 silly REMOVE node_modules/function-bind
+116 silly REMOVE node_modules/for-each
+117 silly REMOVE node_modules/filter-obj
+118 silly REMOVE node_modules/fast-xml-parser
+119 silly REMOVE node_modules/eventemitter3
+120 silly REMOVE node_modules/es-object-atoms
+121 silly REMOVE node_modules/es-errors
+122 silly REMOVE node_modules/es-define-property
+123 silly REMOVE node_modules/dunder-proto
+124 silly REMOVE node_modules/define-data-property
+125 silly REMOVE node_modules/decode-uri-component
+126 silly REMOVE node_modules/call-bound
+127 silly REMOVE node_modules/call-bind-apply-helpers
+128 silly REMOVE node_modules/call-bind
+129 silly REMOVE node_modules/buffer-crc32
+130 silly REMOVE node_modules/browser-or-node
+131 silly REMOVE node_modules/block-stream2
+132 silly REMOVE node_modules/available-typed-arrays
+133 silly REMOVE node_modules/async
+134 silly REMOVE node_modules/@zxing/text-encoding
+135 verbose cwd /data
+136 verbose os Linux 5.15.153.1-microsoft-standard-WSL2
+137 verbose node v20.18.0
+138 verbose npm  v10.8.2
+139 verbose exit 0
+140 info ok

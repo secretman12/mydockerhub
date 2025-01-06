@@ -1,0 +1,68 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.18.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm remove node-red-contrib-minio
+8 verbose argv "remove" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "node-red-contrib-minio"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2025-01-04T00_02_20_079Z-
+10 verbose logfile /data/.npm/_logs/2025-01-04T00_02_20_079Z-debug-0.log
+11 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly reify mark retired [ '/data/node_modules/aws-sdk' ]
+15 silly reify mark retired [ '/data/node_modules/balanced-match' ]
+16 silly reify mark retired [ '/data/node_modules/base64-js' ]
+17 silly reify mark retired [ '/data/node_modules/brace-expansion' ]
+18 silly reify mark retired [ '/data/node_modules/buffer' ]
+19 silly reify mark retired [ '/data/node_modules/events' ]
+20 silly reify mark retired [ '/data/node_modules/ieee754' ]
+21 silly reify mark retired [ '/data/node_modules/isarray' ]
+22 silly reify mark retired [ '/data/node_modules/jmespath' ]
+23 silly reify mark retired [ '/data/node_modules/minimatch' ]
+24 silly reify mark retired [ '/data/node_modules/node-red-contrib-minio' ]
+25 silly reify mark retired [ '/data/node_modules/punycode' ]
+26 silly reify mark retired [ '/data/node_modules/querystring' ]
+27 silly reify mark retired [ '/data/node_modules/url' ]
+28 silly reify mark retired [ '/data/node_modules/uuid', '/data/node_modules/.bin/uuid' ]
+29 silly reify moves {
+29 silly reify   '/data/node_modules/aws-sdk': '/data/node_modules/.aws-sdk-Zz08iQ3h',
+29 silly reify   '/data/node_modules/balanced-match': '/data/node_modules/.balanced-match-cZVSkmYR',
+29 silly reify   '/data/node_modules/base64-js': '/data/node_modules/.base64-js-fM7Z0tn1',
+29 silly reify   '/data/node_modules/brace-expansion': '/data/node_modules/.brace-expansion-yRGPppFz',
+29 silly reify   '/data/node_modules/buffer': '/data/node_modules/.buffer-PnI8qWnd',
+29 silly reify   '/data/node_modules/events': '/data/node_modules/.events-CjKIuhIi',
+29 silly reify   '/data/node_modules/ieee754': '/data/node_modules/.ieee754-LaYQfJUx',
+29 silly reify   '/data/node_modules/isarray': '/data/node_modules/.isarray-Qb0SFsNw',
+29 silly reify   '/data/node_modules/jmespath': '/data/node_modules/.jmespath-GefBbWEf',
+29 silly reify   '/data/node_modules/minimatch': '/data/node_modules/.minimatch-wsiH5s8b',
+29 silly reify   '/data/node_modules/node-red-contrib-minio': '/data/node_modules/.node-red-contrib-minio-gMbk2ny5',
+29 silly reify   '/data/node_modules/punycode': '/data/node_modules/.punycode-gyQTLwWT',
+29 silly reify   '/data/node_modules/querystring': '/data/node_modules/.querystring-E9vW47eE',
+29 silly reify   '/data/node_modules/url': '/data/node_modules/.url-yXBKk8T9',
+29 silly reify   '/data/node_modules/uuid': '/data/node_modules/.uuid-4ltFvtl7',
+29 silly reify   '/data/node_modules/.bin/uuid': '/data/node_modules/.bin/.uuid-AirT9FyH'
+29 silly reify }
+30 silly REMOVE node_modules/uuid
+31 silly REMOVE node_modules/url
+32 silly REMOVE node_modules/querystring
+33 silly REMOVE node_modules/punycode
+34 silly REMOVE node_modules/node-red-contrib-minio
+35 silly REMOVE node_modules/minimatch
+36 silly REMOVE node_modules/jmespath
+37 silly REMOVE node_modules/isarray
+38 silly REMOVE node_modules/ieee754
+39 silly REMOVE node_modules/events
+40 silly REMOVE node_modules/buffer
+41 silly REMOVE node_modules/brace-expansion
+42 silly REMOVE node_modules/base64-js
+43 silly REMOVE node_modules/balanced-match
+44 silly REMOVE node_modules/aws-sdk
+45 verbose cwd /data
+46 verbose os Linux 5.15.153.1-microsoft-standard-WSL2
+47 verbose node v20.18.0
+48 verbose npm  v10.8.2
+49 verbose exit 0
+50 info ok
