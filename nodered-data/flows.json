@@ -402,7 +402,7 @@
         "id": "38ca646c91914790",
         "type": "debug",
         "z": "cc87bf96cbd4b4c1",
-        "name": "debug 4",
+        "name": "minio outout",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -411,7 +411,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
+        "x": 530,
         "y": 960,
         "wires": []
     },
@@ -455,34 +455,19 @@
         ]
     },
     {
-        "id": "83163840c2e4cb65",
-        "type": "debug",
-        "z": "cc87bf96cbd4b4c1",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 1140,
-        "wires": []
-    },
-    {
         "id": "1e45f64f7bbb5a61",
         "type": "debug",
         "z": "cc87bf96cbd4b4c1",
-        "name": "debug 8",
+        "name": "file ok",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1620,
+        "x": 1610,
         "y": 640,
         "wires": []
     },
@@ -520,38 +505,6 @@
         "statusType": "auto",
         "x": 1590,
         "y": 860,
-        "wires": []
-    },
-    {
-        "id": "1e4d8e7bdee82b25",
-        "type": "debug",
-        "z": "cc87bf96cbd4b4c1",
-        "name": "debug 11",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 1000,
-        "wires": []
-    },
-    {
-        "id": "e30a565112909d5d",
-        "type": "debug",
-        "z": "cc87bf96cbd4b4c1",
-        "name": "debug 12",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1210,
-        "y": 1040,
         "wires": []
     },
     {
@@ -613,5 +566,84 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "13acb4bcecb7cb2f",
+        "type": "amqp-in",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "",
+        "broker": "3bc7f58c12cd07c8",
+        "prefetch": 0,
+        "noAck": true,
+        "exchangeName": "amq.topic",
+        "exchangeType": "topic",
+        "exchangeRoutingKey": "KK.EVENT.#",
+        "exchangeDurable": true,
+        "queueName": "",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 340,
+        "y": 1440,
+        "wires": [
+            [
+                "ebe165b682fb617a",
+                "134eb76ed16caac5"
+            ]
+        ]
+    },
+    {
+        "id": "134eb76ed16caac5",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "keyloack",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "ebe165b682fb617a",
+        "type": "function",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "function 3",
+        "func": "let username = msg.payload.details.username;\nlet type = msg.payload.type;\n\nmsg.payload = {\n    username: username,\n    type: type\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1400,
+        "wires": [
+            [
+                "865509bb5f94e3fd"
+            ]
+        ]
+    },
+    {
+        "id": "865509bb5f94e3fd",
+        "type": "debug",
+        "z": "cc87bf96cbd4b4c1",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1400,
+        "wires": []
     }
 ]
