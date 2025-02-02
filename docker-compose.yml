@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 services:
@@ -59,61 +58,6 @@ networks:
 
 volumes:
   node-red-data:
-  minio-data:
+
   
   
-=======
-services:
-  node-red:
-    image: nodered/node-red:latest
-    container_name: node-red
-    ports:
-      - "1880:1880"
-    volumes:
-      - ./nodered-data:/data
-    networks:
-      - mynetwork
-
-  rabbitmq:
-    image: rabbitmq:management
-    container_name: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    networks:
-      - mynetwork
-
-  keycloak:
-    image: quay.io/keycloak/keycloak:latest
-    container_name: keycloak
-    environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
-      - KC_HEALTH_ENABLED=true
-      - KC_METRICS_ENABLED=true
-    ports:
-      - "8080:8080"
-    command: 
-      - start-dev
-    networks:
-      - mynetwork
-
-
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    environment:
-      - POSTGRES_DB=keycloak
-      - POSTGRES_USER=keycloak
-      - POSTGRES_PASSWORD=keycloak
-    networks:
-      - mynetwork
-
-networks:
-  mynetwork:
-    driver: bridge
-
-volumes:
-  node-red-data:
-  minio-data:
->>>>>>> 893f0dfad5b9a897a23562186ec4612b08f623c5
