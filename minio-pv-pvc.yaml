@@ -1,41 +1,4 @@
 
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: minio-pv
-spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /c/Users/user/Documents/my-docker-project/mydockerhub 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: minio-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
-=======
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: minio-pv
-spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /c/Users/user/Documents/my-docker-project/mydockerhub 
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
